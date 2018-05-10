@@ -1,4 +1,7 @@
 ﻿using Xamarin.Forms;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace Tabs
 {
@@ -13,7 +16,7 @@ namespace Tabs
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            AppCenter.Start("android=30b13a8c-93c4-47b4-8eee-cebac5b513af;" + "uwp={Your UWP App secret here};" + "ios={Your iOS App secret here}", typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
